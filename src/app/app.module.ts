@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/character/list/list.component';
 import { TableComponent } from './components/character/table/table.component';
 import { CharacterPreviewComponent } from './components/shared/character-preview/character-preview.component';
+import { InfoDetailsComponent } from './components/character/info-details/info-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CharacterPreviewComponent } from './components/shared/character-preview
     HomeComponent,
     ListComponent,
     TableComponent,
-    CharacterPreviewComponent
+    CharacterPreviewComponent,
+    InfoDetailsComponent
   ],
   imports: [
     BrowserModule,

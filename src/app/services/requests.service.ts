@@ -25,7 +25,7 @@ export class RequestsService {
         )
     }
 
-    getCharacterXid(id: string) {
+    getCharacterXid(id: number) {
         return this.conexion.getRequest(`character/${id}`)
     }
 }

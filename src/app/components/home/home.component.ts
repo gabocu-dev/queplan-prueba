@@ -7,6 +7,7 @@ import { CharacterModel } from "src/app/models";
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.sass']
 })
+
 export class HomeComponent implements OnInit {
   charactersList: CharacterModel[] = [];
   viewTypeOptions: any[];
