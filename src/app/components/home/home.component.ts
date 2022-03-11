@@ -6,17 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-  stateOptions: any[];
+  viewTypeOptions: any[];
+  viewType: string = 'list'
 
-  constructor() {
-    this.stateOptions = [
-      { label: 'Off', value: 'off' },
-      { label: 'On', value: 'on' },
-    ];
-   }
+  constructor() { }
 
   ngOnInit(): void {
+    this.viewTypeOptions = [
+      { label: 'Lista', value: 'list', icon: 'pi pi-id-card' },
+      { label: 'Tabla', value: 'table', icon: 'pi pi-table' },
+    ];
+  }
 
+  changeViewType(event: any) {
+    console.log(event)
   }
 
 }
