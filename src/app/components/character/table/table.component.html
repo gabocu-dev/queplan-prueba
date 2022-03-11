@@ -1,0 +1,24 @@
+<div class="characters-tbl">
+    <p-table [value]="charactersList" [scrollable]="false">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Ver</th>
+                <th></th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Especie</th>
+                <th>Origen</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-character>
+            <tr>
+                <td></td>
+                <td><img class="table-avatar" src="{{character.image}}" alt="{{character.name}}"></td>
+                <td>{{character.name}}</td>
+                <td>{{character.status}}</td>
+                <td>{{character.species}}</td>
+                <td>{{character.origin}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

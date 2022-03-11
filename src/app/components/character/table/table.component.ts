@@ -1,14 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CharacterModel } from "src/app/models";
-import { map, tap } from 'rxjs';
 
 @Component({
-  selector: 'characters-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.sass']
+  selector: 'characters-table',
+  templateUrl: './table.component.html',
+  styleUrls: ['./table.component.sass']
 })
-
-export class ListComponent implements OnInit {
+export class TableComponent implements OnInit {
   @Input() charactersList: CharacterModel[];
 
   constructor() { }
