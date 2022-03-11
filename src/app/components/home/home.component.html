@@ -1,0 +1,13 @@
+<p-selectButton
+    [options]="viewTypeOptions"
+    optionLabel="label"
+    optionValue="value"
+    (onChange)="viewType = $event.value">
+        <ng-template let-item>
+            <i [class]="item.icon"></i>
+        </ng-template>
+</p-selectButton>
+
+<characters-list *ngIf="viewType === 'list'"></characters-list>
+
+
