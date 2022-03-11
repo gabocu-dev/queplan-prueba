@@ -1,13 +1,17 @@
-<p-selectButton
-    [options]="viewTypeOptions"
-    optionLabel="label"
-    optionValue="value"
-    (onChange)="viewType = $event.value">
-        <ng-template let-item>
-            <i [class]="item.icon"></i>
-        </ng-template>
-</p-selectButton>
-
-<characters-list *ngIf="viewType === 'list'"></characters-list>
-
-
+<section class="home">
+    <div class="viewTypeBtn">
+        <p>Tipo de Vista</p>
+        <p-selectButton
+            [options]="viewTypeOptions"
+            optionLabel="label"
+            optionValue="value"
+            (onChange)="viewType = $event.value">
+                <ng-template let-item>
+                    <i [class]="item.icon"></i>
+                </ng-template>
+        </p-selectButton>
+    </div>
+    
+    <characters-list *ngIf="viewType === 'list'" [charactersList]="charactersList"></characters-list>
+    <characters-table *ngIf="viewType === 'table'" [charactersList]="charactersList"></characters-table>
+</section>

@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/layouts/header/header.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/character/list/list.component';
+import { TableComponent } from './components/character/table/table.component';
 import { CharacterPreviewComponent } from './components/shared/character-preview/character-preview.component';
 
 @NgModule({
@@ -16,9 +17,10 @@ import { CharacterPreviewComponent } from './components/shared/character-preview
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    HomeComponent,
     ListComponent,
-    CharacterPreviewComponent,
-    HomeComponent
+    TableComponent,
+    CharacterPreviewComponent
   ],
   imports: [
     BrowserModule,
