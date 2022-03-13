@@ -12,7 +12,7 @@
         </ng-template>
         <ng-template pTemplate="body" let-character>
             <tr>
-                <td></td>
+                <td><i class="pi pi-eye" (click)="goToInfo(character.id)"></i></td>
                 <td><img class="table-avatar" src="{{character.image}}" alt="{{character.name}}"></td>
                 <td>{{character.name}}</td>
                 <td>{{character.status}}</td>

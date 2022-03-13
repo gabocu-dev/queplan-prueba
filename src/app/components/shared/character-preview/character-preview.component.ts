@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CharacterModel } from "src/app/models";
 
 @Component({
@@ -9,9 +10,12 @@ import { CharacterModel } from "src/app/models";
 export class CharacterPreviewComponent implements OnInit {
   @Input() characterInfo: CharacterModel;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  goToInfo(id: number) {
+    this.router.navigate([`/character/information/${id}`]);
   }
 
 }

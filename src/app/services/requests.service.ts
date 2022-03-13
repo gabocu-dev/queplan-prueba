@@ -25,7 +25,13 @@ export class RequestsService {
         )
     }
 
-    getCharacterXid(id: string) {
-        return this.conexion.getRequest(`character/${id}`)
+    getCharacterXid(id: number) {
+        return this.conexion.getRequest(`/character/${id}`).pipe(
+            map((character: any) => ({
+                ...character,
+                origin: character.origin.name,
+                location: character.location.name
+            }))
+        )
     }
 }

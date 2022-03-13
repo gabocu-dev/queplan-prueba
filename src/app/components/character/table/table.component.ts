@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CharacterModel } from "src/app/models";
 
 @Component({
@@ -6,11 +7,16 @@ import { CharacterModel } from "src/app/models";
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.sass']
 })
+
 export class TableComponent implements OnInit {
   @Input() charactersList: CharacterModel[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void { }
+
+  goToInfo(id: number) {
+    this.router.navigate([`/character/information/${id}`]);
+  }
 
 }
