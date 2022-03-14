@@ -10,20 +10,19 @@ import { CharacterModel } from "src/app/models";
 })
 
 export class InfoDetailsComponent implements OnInit {
-  idCharacter: string = '';
+  idCharacter: number = 0;
   characterInfo: CharacterModel;
 
   constructor(private requests: RequestsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      // this.idCharacter = params.idCharacter;
+      this.idCharacter = params['idCharacter'];
     });
 
-    this.requests.getCharacterXid(5)
+    this.requests.getCharacterXid(this.idCharacter)
       .subscribe(res => {
         this.characterInfo = res
-        console.log(res)
       })
   }
 

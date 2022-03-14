@@ -34,4 +34,20 @@ export class RequestsService {
             }))
         )
     }
+
+    getFilteredCharacters(query: string) {
+        console.log(query)
+        return this.conexion.getRequest(`/character/?${query}`).pipe(
+            map(res => <CharacterResponseModel>res),
+            map(res => ({
+                    info: res.info,
+                    characters: res.results.map(character => ({
+                        ...character,
+                        origin: character.origin.name,
+                        location: character.location.name
+                    }))
+                })
+            )
+        )
+    }
 }
