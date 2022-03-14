@@ -1,17 +1,67 @@
 <section class="home">
-    <div class="viewTypeBtn">
-        <p>Tipo de Vista</p>
-        <p-selectButton
-            [options]="viewTypeOptions"
-            optionLabel="label"
-            optionValue="value"
-            (onChange)="viewType = $event.value">
-                <ng-template let-item>
-                    <i [class]="item.icon"></i>
-                </ng-template>
-        </p-selectButton>
+    <div class="header-home">
+        <div class="filter">
+            <button
+                pButton pRipple 
+                type="button" 
+                icon="pi pi-search" 
+                class="p-button-rounded filter-btn"
+                [disabled]="!isCheckedTxt && !isCheckedGender"
+                (click)="onFilter()">
+            </button>
+            <div class="filter-options"> 
+                <div class="filter-section">
+                    <div>
+                        <p>Nombre</p>
+                        <p-inputSwitch [(ngModel)]="isCheckedTxt"></p-inputSwitch>
+                    </div>
+                    <input
+                        *ngIf="isCheckedTxt"
+                        pInputText
+                        type="text"
+                        placeholder="Texto de búsqueda"
+                        [(ngModel)]="textFilter" />
+                </div>
+                <div class="filter-section">
+                    <div>
+                        <p-inputSwitch
+                            (onChange)="isGenderActivate($event)"
+                            [(ngModel)]="isCheckedGender">
+                        </p-inputSwitch>
+                        <p>Genero</p>
+                    </div>
+                    <p-selectButton
+                        *ngIf="isCheckedGender"
+                        [options]="genderOptions"
+                        optionLabel="label"
+                        optionValue="value"
+                        [(ngModel)]="genderTypeFilter">
+                    </p-selectButton>
+                </div>
+            </div>
+        </div>
+        <div class="viewTypeBtn">
+            <p>Tipo de Vista</p>
+            <p-selectButton
+                [options]="viewTypeOptions"
+                optionLabel="label"
+                optionValue="value"
+                (onChange)="viewType = $event.value">
+                    <ng-template let-item>
+                        <i [class]="item.icon"></i>
+                    </ng-template>
+            </p-selectButton>
+        </div>
     </div>
-    
+
     <characters-list *ngIf="viewType === 'list'" [charactersList]="charactersList"></characters-list>
     <characters-table *ngIf="viewType === 'table'" [charactersList]="charactersList"></characters-table>
+
+    <p-paginator
+        [rows]="20"
+        [totalRecords]="totalCount"
+        (onPageChange)="onChangePage($event)">
+    </p-paginator>
+
 </section>
+<p-toast position="top-center"></p-toast>
