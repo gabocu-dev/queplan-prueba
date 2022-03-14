@@ -1,27 +1,15 @@
-# QueplanPrueba
+# Prueba técnica que plan
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+Primero quier agradecer al equipo de Que Plan por su tiempo y por la confianza que me han brindado. estas son algunas aclaraciones:
 
-## Development server
+1. Debido al pequeño tamaño del proyecto no se hizo necesario establecer un estado con Redux ngrx.
+2. Se utilizó el framework de UI ng prime.
+3. La vista de home tiene dos opciones: la de cards que se hizo con maquetación y estilos manualmente, y la de tabla para ejemplificar el uso de herramientas y frameworks de UI.
+4. Otras cosas como el paginador se hicieron con ayuda del framework ui.
+5. En el filtro no se usó la edad, debído a que en la información de la API no se encuentra edad o fecha de nacimiento.
+6. Como el proyecto es publico, la transferencia de datos se manejó como un parámetro de la ruta. si se quería mas privacidad se podría usar el local storage. Lo ideal en una plataforma privada y segura es establecer un estado, donde se dispara un action que activa un effect, este usara un servicio para realizar la consulta y se guardaran los datos en el estado de la app donde se podrán consultar cuando se necesiten.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Muchas gracias de nuevo por todo su tiempo y siempre estaré abierto a cualquier tipo de retroalimentación.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+GABRIEL EDUARDO CARDONA URIBE

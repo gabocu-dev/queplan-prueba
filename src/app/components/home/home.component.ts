@@ -65,6 +65,10 @@ export class HomeComponent implements OnInit {
       : ""
   }
 
+  // Se usó para este filtro el endpoint de la api. De tener los personajes
+  // almacenados en el estado se podrían haber filtadro haciendo sobre el array
+  // el operador filter que filtre con la operacion includes los string de nombre o de género 
+
   onFilter() {
     let queryTxt = "";
     if(this.isCheckedTxt) {
